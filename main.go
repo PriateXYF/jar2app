@@ -13,7 +13,7 @@ import (
 	"text/template"
 )
 
-const version string = "v1.0.1"
+const version string = "v1.0.2"
 
 //go:embed assets/Info.plist
 var plist embed.FS
