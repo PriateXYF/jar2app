@@ -39,6 +39,7 @@ func copyFile(src, dst string) error {
 type Jar struct {
 	AppName    string
 	JarPath    string
+	ClassPath  string
 	IconPath   string
 	IconName   string
 	MainClass  string
@@ -80,6 +81,7 @@ func (jar *Jar) getJarPath() {
 		os.Exit(1)
 	}
 	jar.JarPath = absJarPath
+	jar.ClassPath = fmt.Sprintf("Contents/Java/%s", filepath.Base(jar.JarPath))
 	log.Println("ℹ️", "jar path   : ", jar.JarPath)
 }
 
