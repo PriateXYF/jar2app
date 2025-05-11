@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>CFBundleExecutable</key>               <string>universalJavaApplicationStub</string>
+        <key>CFBundleName</key>                     <string>{{.AppName}}</string>
+        <key>CFBundleGetInfoString</key>            <string>Make By jar2app</string>
+        <key>CFBundleIconFile</key>                 <string>{{.IconName}}</string>
+        <key>CFBundleIdentifier</key>               <string>{{.Identifier}}</string>
+        <key>CFBundleShortVersionString</key>       <string>{{.Version}}</string>
+        <key>NSHumanReadableCopyright</key>         <string>{{.Copyright}}</string>
+
+
+        <key>JavaX</key>
+        <dict>
+            <key>MainClass</key>                    <string>{{.MainClass}}</string>
+            <key>JVMVersion</key>                   <string>1.8+</string>
+            <key>ClassPath</key>                    <string>{{.JarPath}}</string>
+            <key>WorkingDirectory</key>             <string>$APP_ROOT</string>
+            <key>Properties</key>
+            <dict>
+                <key>apple.laf.useScreenMenuBar</key>
+                <string>true</string>
+            </dict>
+        </dict>
+
+        <key>CFBundlePackageType</key>              <string>APPL</string>
+        <key>CSResourcesFileMapped</key>            <true/>
+        <key>LSRequiresCarbon</key>                 <true/>
+        <key>NSPrincipalClass</key>                 <string>NSApplication</string>
+        <key>CFBundleInfoDictionaryVersion</key>    <string>6.0</string>
+        <key>NSHighResolutionCapable</key>          <true/>
+
+        <key>NSAppleEventsUsageDescription</key>
+        <string>There was an error while launching the application. Please click OK to display a dialog with more information or cancel and view the syslog for details.</string>
+    </dict>
+</plist>
