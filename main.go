@@ -13,7 +13,7 @@ import (
 	"text/template"
 )
 
-const version string = "v0.0.5"
+const version string = "v1.0.1"
 
 //go:embed assets/Info.plist
 var plist embed.FS
@@ -69,7 +69,7 @@ func (jar *Jar) getJavaHome() {
 		os.Exit(1)
 	}
 	jar.JavaHome = javaHome
-	log.Println("✅", "java home  : ", jar.JavaHome)
+	log.Println("ℹ️", "java home  : ", jar.JavaHome)
 }
 
 func (jar *Jar) getJarPath() {
@@ -80,7 +80,7 @@ func (jar *Jar) getJarPath() {
 		os.Exit(1)
 	}
 	jar.JarPath = absJarPath
-	log.Println("✅", "jar path   : ", jar.JarPath)
+	log.Println("ℹ️", "jar path   : ", jar.JarPath)
 }
 
 func (jar *Jar) getMainClass() {
@@ -96,7 +96,7 @@ func (jar *Jar) getMainClass() {
 		os.Exit(1)
 	}
 	jar.MainClass = mainClass
-	log.Println("✅", "main class : ", jar.MainClass)
+	log.Println("ℹ️", "main class : ", jar.MainClass)
 }
 
 func (jar *Jar) getAppName() {
@@ -107,7 +107,7 @@ func (jar *Jar) getAppName() {
 		appName = strings.TrimSuffix(baseName, extName)
 	}
 	jar.AppName = appName
-	log.Println("✅", "app name   : ", jar.AppName)
+	log.Println("ℹ️", "app name   : ", jar.AppName)
 }
 
 func (jar *Jar) getIconPath() {
@@ -121,7 +121,7 @@ func (jar *Jar) getIconPath() {
 		baseName := filepath.Base(jar.IconPath)
 		extName := filepath.Ext(jar.IconPath)
 		jar.IconName = strings.TrimSuffix(baseName, extName)
-		log.Println("✅", "icon path  : ", jar.IconPath)
+		log.Println("ℹ️", "icon path  : ", jar.IconPath)
 	}
 }
 
@@ -208,6 +208,7 @@ func (jar *Jar) generateFiles() {
 func (jar *Jar) Build() {
 	jar.checkAndParse()
 	jar.generateFiles()
+	log.Println("🥳", fmt.Sprintf("build app %s.app successful!", jar.AppName))
 }
 
 func parseFlag() (*Jar, error) {
