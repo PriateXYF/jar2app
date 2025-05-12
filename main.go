@@ -13,7 +13,7 @@ import (
 	"text/template"
 )
 
-const version string = "v1.0.3"
+const version string = "v1.0.4"
 
 //go:embed assets/Info.plist
 var plist embed.FS
@@ -209,9 +209,10 @@ func (jar *Jar) generateFiles() {
 }
 
 func (jar *Jar) Build() {
+	log.Println("📦", "jar2app", version)
 	jar.checkAndParse()
 	jar.generateFiles()
-	log.Println("🥳", fmt.Sprintf("build app %s.app successful!", jar.AppName))
+	log.Println("🎉", fmt.Sprintf("build app %s.app successful!", jar.AppName))
 }
 
 func parseFlag() (*Jar, error) {
@@ -236,7 +237,6 @@ func parseFlag() (*Jar, error) {
 
 func main() {
 	log.SetOutput(os.Stdout)
-	log.Println("📦", "jar2app", version)
 	jar, err := parseFlag()
 	if err != nil {
 		log.Println("❗️", "parse flag error :", err.Error())
