@@ -9,7 +9,7 @@
         <key>CFBundleIdentifier</key>               <string>{{.Identifier}}</string>
         <key>CFBundleShortVersionString</key>       <string>{{.Version}}</string>
         <key>NSHumanReadableCopyright</key>         <string>{{.Copyright}}</string>
-
+        <key>JavaHome</key>                         <string>{{.JavaHome}}</string>
 
         <key>JavaX</key>
         <dict>
