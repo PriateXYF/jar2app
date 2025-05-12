@@ -13,7 +13,7 @@ import (
 	"text/template"
 )
 
-const version string = "v1.0.2"
+const version string = "v1.0.3"
 
 //go:embed assets/Info.plist
 var plist embed.FS
@@ -38,6 +38,7 @@ func copyFile(src, dst string) error {
 
 type Jar struct {
 	AppName    string
+	Info       string
 	JarPath    string
 	ClassPath  string
 	IconPath   string
@@ -217,6 +218,7 @@ func parseFlag() (*Jar, error) {
 	var jarPathFlag, iconPathFlag, appNameFlag, identifierFlag, copyrightFlag, verFlag string
 	flag.StringVar(&jarPathFlag, "jar", "", ".jar file path")
 	flag.StringVar(&iconPathFlag, "icon", "", ".icns icon file path")
+	flag.StringVar(&iconPathFlag, "info", "Made by virts.", "app info")
 	flag.StringVar(&appNameFlag, "name", "", "app name")
 	flag.StringVar(&identifierFlag, "id", "app.virts", "app identifier")
 	flag.StringVar(&copyrightFlag, "copyright", "Copyright 2025 virts", "app copyright")

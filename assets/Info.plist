@@ -4,7 +4,7 @@
     <dict>
         <key>CFBundleExecutable</key>               <string>universalJavaApplicationStub</string>
         <key>CFBundleName</key>                     <string>{{.AppName}}</string>
-        <key>CFBundleGetInfoString</key>            <string>Make By jar2app</string>
+        <key>CFBundleGetInfoString</key>            <string>{{.Info}}</string>
         <key>CFBundleIconFile</key>                 <string>{{.IconName}}</string>
         <key>CFBundleIdentifier</key>               <string>{{.Identifier}}</string>
         <key>CFBundleShortVersionString</key>       <string>{{.Version}}</string>
