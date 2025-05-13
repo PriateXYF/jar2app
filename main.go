@@ -13,7 +13,7 @@ import (
 	"text/template"
 )
 
-const version string = "v1.0.5"
+const version string = "v1.0.6"
 
 //go:embed assets/Info.plist
 var plist embed.FS
@@ -82,7 +82,7 @@ func (jar *Jar) getJarPath() {
 		os.Exit(1)
 	}
 	jar.JarPath = absJarPath
-	jar.ClassPath = fmt.Sprintf("Contents/Java/%s", filepath.Base(jar.JarPath))
+	jar.ClassPath = filepath.Base(jar.JarPath)
 	log.Println("ℹ️", "jar path   : ", jar.JarPath)
 }
 

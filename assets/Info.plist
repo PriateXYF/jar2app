@@ -16,7 +16,7 @@
             <key>MainClass</key>                    <string>{{.MainClass}}</string>
             <key>JVMVersion</key>                   <string>1.8+</string>
             <key>ClassPath</key>                    <string>{{.ClassPath}}</string>
-            <key>WorkingDirectory</key>             <string>$APP_ROOT</string>
+            <key>WorkingDirectory</key>             <string>$APP_ROOT/Contents/Java</string>
             <key>Properties</key>
             <dict>
                 <key>apple.laf.useScreenMenuBar</key>
